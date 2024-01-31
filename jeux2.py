@@ -1,4 +1,5 @@
 import random
+import time
 
 nombrejoueur=0
 
@@ -17,18 +18,26 @@ while True:
             print("Programe Veuillez saisir un nombre")
 
         if nombrejoueur != secret:
-            nombrejoueur = random.randint(minNUM, maxNUM)
+            if random.choice([True, False]):
+                print("Le programe reflechie...")
+                time.sleep(random.randint(1,3))
+                nombrejoueur = random.randint(minNUM, maxNUM)
+                print("Le programme a pris", nombrejoueur)
+            else:
+                nombrejoueur = random.randint(minNUM, maxNUM)
+                print("Le programme a choisie", nombrejoueur, "sans hesitation!")
+                
 
-        print(nombrejoueur)
+        
         if nombrejoueur == secret:
-            print("Bravo tu a trouver en ", i, "d'essaie!")
+            print("Bravo Le programme a trouver en", i, "d'essaie!")
             break
         else:
             if nombrejoueur > secret:
-                print("Le nombre est plus petit")
+                print("Le nombre secret est plus petit\n")
                 maxNUM = nombrejoueur-1
             elif nombrejoueur < secret:
-                print("Le nombre est plus grand")
+                print("Le nombre secret est plus grand\n")
                 minNUM = nombrejoueur+1
     
     if nombrejoueur != secret:
