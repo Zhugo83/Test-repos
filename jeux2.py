@@ -12,20 +12,16 @@ minNUM = 0
 while True:
     print("Donnée un nombre que le program va devinée")
     secret = int(input())
+    print("Combien d'essaie disponible (10 default)")
+    tries = int(input())
 
     for i in range(tries):
         if i == 0:
             print("Programe Veuillez saisir un nombre")
 
         if nombrejoueur != secret:
-            if random.choice([True, False]):
-                print("Le programe reflechie...")
-                time.sleep(random.randint(1,3))
-                nombrejoueur = random.randint(minNUM, maxNUM)
-                print("Le programme a pris", nombrejoueur)
-            else:
-                nombrejoueur = random.randint(minNUM, maxNUM)
-                print("Le programme a choisie", nombrejoueur, "sans hesitation!")
+            nombrejoueur = random.randint(minNUM, maxNUM)
+            print("Le programme a choisie", nombrejoueur)
                 
 
         
