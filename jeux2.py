@@ -21,7 +21,7 @@ while True:
 
         print(nombrejoueur)
         if nombrejoueur == secret:
-            print("Bravo")
+            print("Bravo tu a trouver en ", i, "d'essaie!")
             break
         else:
             if nombrejoueur > secret:
